@@ -70,6 +70,5 @@ func main() {
 		panic(err)
 	}
 	fmt.Println("Starting the server on :8080")
-	log.Fatal(http.ListenAndServe(":8081", yamlHandler))
-
+	log.Fatal(http.ListenAndServe(":8080", yamlHandler))
 }
