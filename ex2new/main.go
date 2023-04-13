@@ -1,9 +1,8 @@
 package main
 
 import (
-	"errors"
+	"log"
 	"net/http"
-	"os"
 
 	"fmt"
 
@@ -71,11 +70,6 @@ func main() {
 		panic(err)
 	}
 	fmt.Println("Starting the server on :8080")
-	http.ListenAndServe(":8081", yamlHandler)
-	if errors.Is(err, http.ErrServerClosed) {
-		fmt.Printf("server closed\n")
-	} else if err != nil {
-		fmt.Printf("error starting server: %s\n", err)
-		os.Exit(1)
-	}
+	log.Fatal(http.ListenAndServe(":8081", yamlHandler))
+
 }
