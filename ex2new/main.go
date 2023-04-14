@@ -69,6 +69,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Starting the server on :8081")
-	log.Fatal(http.ListenAndServe(":8081", yamlHandler))
+	fmt.Println("Starting the server on :8080")
+	log.Fatal(http.ListenAndServe(":8080", yamlHandler))
 }
